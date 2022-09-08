@@ -1,6 +1,13 @@
 .mainWrapper{
     
 }
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 1rem;;
+}
+
 h1{
     text-align: center;
 }

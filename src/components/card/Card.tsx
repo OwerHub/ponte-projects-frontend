@@ -1,23 +1,17 @@
-import "./dist/card.css"
-import {Iproject} from "../../types/projectTypes"
-import placeHolderPic from "../../img/placeholder.jpg"
+import "./dist/card.css";
+import { Iproject } from "../../types/projectTypes";
+import placeHolderPic from "../../img/placeholder.jpg";
 
 interface IcardProps {
-    projectData : Iproject
+  projectData: Iproject;
 }
 
-
-
-
-export  const Card = (props: IcardProps) => {
-
-
-    return (
-        <div className="cardOuter">
-            <div>name: {props.projectData.name}</div>
-            <img src={placeHolderPic} alt="" />
-            <div></div>
-        </div>
-    )
-
-}
+export const Card = (props: IcardProps) => {
+  return (
+    <div className="cardOuter">
+      <div> {props.projectData.name}</div>
+      <img src={placeHolderPic} alt="" />
+      <div></div>
+    </div>
+  );
+};
