@@ -1,3 +1,4 @@
+import "./dist/cardContainer.css"
 import { Iproject } from "../../types/projectTypes";
 import { useState } from "react";
 
@@ -11,10 +12,10 @@ interface IcardContainerProps {
 
 
 export const CardContainer = (props: IcardContainerProps) => {
-  return <div>
+  return <div className="cardContainerOuter">
     this is CardContainer
 
-   <div>
+   <div className="cardWrapper">
     {props.projects.map((project, iterator) => (
       <Card projectData={project}  key={`cardKey${iterator}`}/>
     ))}

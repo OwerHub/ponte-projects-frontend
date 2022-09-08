@@ -1,0 +1,18 @@
+.cardOuter {
+  background-color: red;
+  width: 20%;
+  min-width: 230px;
+  min-height: 40vh;
+  margin: 1rem;
+  padding: 0.5rem 0 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}

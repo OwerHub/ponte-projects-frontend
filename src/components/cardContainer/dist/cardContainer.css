@@ -1,0 +1,8 @@
+.cardContainerOuter {
+  background-color: green;
+}
+
+.cardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
