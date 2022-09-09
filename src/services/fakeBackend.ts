@@ -21,9 +21,7 @@ const projects:Iproject[]= [
             id:1576996323454
            }
         ],
-        links: [
-            "secret", "secret", "secret"
-        ],
+      
         id:324234234234
     },
     {
@@ -56,9 +54,7 @@ const projects:Iproject[]= [
             id: 45464
            }
         ],
-        links: [
-            "secret", "secret", "secret"
-        ],
+    
         id: 234234234234
     },
   

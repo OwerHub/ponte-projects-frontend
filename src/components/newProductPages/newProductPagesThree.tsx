@@ -1,9 +1,12 @@
 import "./dist/newProductPages.css";
 import { useState, useEffect } from "react";
 import { characterValidator } from "../../services/validators";
+import { Iproject } from "../../types/projectTypes";
 
 interface IproductPageProps {
   pageSetter: (page: number) => void;
+  projectDataSetter: (project: Iproject) => void;
+  projectDatas: Iproject;
 }
 
 interface IerrorMessagePage3 {
@@ -14,7 +17,6 @@ interface IerrorMessagePage3 {
 interface IlinkData extends IerrorMessagePage3{
     id: number
 }
-
 
 export const NewProductPageThree = (props: IproductPageProps) => {
   const [isErrorMessage, setErrorMessage] = useState<IerrorMessagePage3>({
@@ -54,7 +56,24 @@ export const NewProductPageThree = (props: IproductPageProps) => {
     setLinkList((prev) => prev.filter(link => link.id !== id))
   }
 
+  const nextButtonHandler = () => {
+    props.projectDataSetter({
+      ...props.projectDatas,
+        links:isLinkList
+    });
 
+
+    props.pageSetter(4);
+  };
+
+  useEffect(()=> {
+
+    if (props.projectDatas.links?.length  )
+     {
+        setLinkList(props.projectDatas?.links)
+    }
+
+  })
 
 
   useEffect(() => {
@@ -132,7 +151,7 @@ export const NewProductPageThree = (props: IproductPageProps) => {
 
       <div className="newProdPageFooter">
         <button onClick={() => props.pageSetter(2)}>Prev</button>
-        <button onClick={() => props.pageSetter(3)}>next</button>
+        <button onClick={() => nextButtonHandler()}>next</button>
       </div>
     </div>
   );

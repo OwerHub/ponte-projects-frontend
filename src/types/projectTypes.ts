@@ -4,11 +4,17 @@ export interface Icollege {
     position: string
 }
 
+export interface IlinkData{
+    name: string
+    link: string
+    id: number
+}
+
 export interface Iproject  {
     name: string
     description?: string
     colleges: Icollege[]
-    links?: string []
+    links?: IlinkData[]
     id: number
 }
 

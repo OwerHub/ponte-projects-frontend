@@ -8,7 +8,14 @@ import { NewProdPageOne } from "../newProductPages/newProductPageOne"
 import { NewProductPageTwo } from "../newProductPages/newProductpageTwo"
 import {  NewProductPageThree } from "../newProductPages/newProductPagesThree"
 
-export const NewProduct = () => {
+
+interface InewProductProps {
+    close: ()=> void
+
+}
+
+
+export const NewProduct = (props:InewProductProps) => {
 
 const [isPage, setPage] = useState<number>(1)
 const [isProjectDatas, setProjectDatas] = useState<Iproject>(
@@ -30,6 +37,7 @@ console.log(isProjectDatas)
         <div className="newProductContainer">
             <div className="newProductInner">
                 <ProgressBar/>
+                <div onClick={props.close} className="closeButton"> X</div>
                 <div className="newProdPages">
                     {isPage === 1 &&  <NewProdPageOne  
                     pageSetter={(page)=>setPage(page)}
@@ -41,7 +49,13 @@ console.log(isProjectDatas)
                      projectDataSetter={(set)=>setProjectDatas(set)}
                      projectDatas={isProjectDatas}
                      />}
-                    {isPage === 3 &&  <NewProductPageThree  pageSetter={(page)=>setPage(page)}/>}
+                    {isPage === 3 &&  <NewProductPageThree
+                      pageSetter={(page)=>setPage(page)}
+                      projectDataSetter={(set)=>setProjectDatas(set)}
+                      projectDatas={isProjectDatas}
+                      />
+                      
+                      }
                 </div>
             </div>
         </div>

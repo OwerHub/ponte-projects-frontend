@@ -9,6 +9,7 @@ import { NewProduct } from "../newProduct/NewProduct";
 
 export const Main = () => {
   const [isProjectArray, setProjectArray] = useState<Iproject[]>([]);
+  const [isNewModalOpen, setNewModalOpen] = useState<boolean>(false)
 
   async function askProject() {
     const solved = await fakebackendAnswer(1500);
@@ -23,7 +24,7 @@ export const Main = () => {
     <div className="mainWrapper">
         <div className="head">
             <h1>This is PonteProjects Head </h1>
-            <button>new  task</button>
+            <button onClick={()=>setNewModalOpen(true)}>new  task</button>
 
         </div>
       <div className="cardDiv">
@@ -32,7 +33,11 @@ export const Main = () => {
         )}
       </div>
       <div>
-            <NewProduct/>
+          {isNewModalOpen && 
+            <NewProduct
+              close={()=>setNewModalOpen(false)}
+              />}
+            
       </div>
     </div>
   );
