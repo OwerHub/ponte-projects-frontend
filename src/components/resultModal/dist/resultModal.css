@@ -103,3 +103,10 @@
 .dataListDivWrapper .dataList .linkDataWrapper div:first-child {
   font-weight: bold;
 }
+
+.clickabbleLink {
+  cursor: pointer;
+}
+.clickabbleLink:hover {
+  color: blue;
+}

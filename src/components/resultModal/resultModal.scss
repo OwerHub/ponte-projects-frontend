@@ -113,3 +113,10 @@ position: relative;
     
   }
 }
+
+.clickabbleLink{
+  cursor: pointer;
+  &:hover{
+    color: blue
+  }
+}

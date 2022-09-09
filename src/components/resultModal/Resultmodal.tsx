@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 
 import { LoadingSpinner } from "../loading/LoadngSpinner";
 
+
 interface IresultModalProps {
   id: number;
   close: () => void;
@@ -22,6 +23,11 @@ export const ResultModal = (props: IresultModalProps) => {
     setProjectResut(solved as Iproject);
     setLoading(false)
   }
+
+  const setRedirect = (href:string) => {
+    window.location.href = href;
+  }
+
 
   useEffect(() => {
     getResults(props.id);
@@ -59,7 +65,12 @@ export const ResultModal = (props: IresultModalProps) => {
                 {isProjectResult?.links?.map((linkData, iterator) => (
                   <div className="linkDataWrapper" key={`linkWrap${iterator}`}>
                     <div>{linkData.name}</div>
-                    <div>{linkData.link}</div>
+                    <div
+                       onClick={()=>setRedirect(linkData.link)}
+                       className="clickabbleLink"  
+                       >{linkData.link}
+                    </div>
+                  
                   </div>
                 ))}
               </div>
