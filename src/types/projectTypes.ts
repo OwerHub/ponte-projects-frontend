@@ -1,4 +1,5 @@
 export interface Icollege {
+    id: number
     name: string
     position: string
 }

@@ -11,15 +11,14 @@ interface IproductPageProps {
   pageSetter: (page: number) => void;
 }
 
-interface IerrorMessagePage2 extends Icollege {
+interface InputCollege {
+ name: string
+ position: string
+}
+interface IerrorMessagePage2 extends InputCollege {
   next: string;
 }
 
-interface tryCollege {
-    name: string
-    position: string
-    id: number
-}
 
 export const NewProductPageTwo = (props: IproductPageProps) => {
 
@@ -29,7 +28,7 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
     next: "",
   });
 
-  const [isValuesPageTwo, setValuesPageTwo] = useState<Icollege>({
+  const [isValuesPageTwo, setValuesPageTwo] = useState<InputCollege>({
     name: "",
     position: "",
   });
@@ -47,7 +46,7 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
 
   
   const addToArray = () => {
-    const newCollege:tryCollege = {
+    const newCollege:Icollege = {
         ...isValuesPageTwo,
         id: 3242323
     }
