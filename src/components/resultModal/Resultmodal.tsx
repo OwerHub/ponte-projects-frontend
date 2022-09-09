@@ -70,7 +70,7 @@ export const ResultModal = (props: IresultModalProps) => {
             <div className="dataList">
               <div className="dataListHead">Links</div>
               <div className="linkWrapper">
-                {isProjectResult?.links?.map((linkData, iterator) => (
+                {    isProjectResult?.links?.map((linkData, iterator) => (
                   <div className="linkDataWrapper" key={`linkWrap${iterator}`}>
                     <div>{linkData.name}</div>
                     <div

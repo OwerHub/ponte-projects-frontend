@@ -70,17 +70,19 @@ position: relative;
 .resultDiv {
   @extend .paragraphs;
   margin: .5rem 0;
+  text-align: center;
 
 }
 
 .dataListDivWrapper {
+  
   display: flex;
   justify-content: space-between;
   gap: 1rem;
 
   .dataList {
     overflow-y: auto;
-
+    width: 21vw;
     .dataListHead{
         text-align: center;
         font-weight: bold;
