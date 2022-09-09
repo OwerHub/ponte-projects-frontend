@@ -91,7 +91,7 @@ export const Main = () => {
 
         {isResultModalOpen && (
           <ResultModal
-           id={234234234234}
+           id={isResultId}
            close={()=> setResultModalOpen(false)}
            />
         )}

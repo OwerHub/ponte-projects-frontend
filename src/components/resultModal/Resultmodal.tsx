@@ -32,6 +32,7 @@ export const ResultModal = (props: IresultModalProps) => {
         </div>
         <div className="resultDiv">{isProjectResult?.description}</div>
         <div className="dataListDivWrapper">
+
           <div className="dataList">
             <div className="dataListHead">Colleges</div>
             <div className="collegesWrapper">
@@ -46,7 +47,8 @@ export const ResultModal = (props: IresultModalProps) => {
               ))}
             </div>
           </div>
-
+           {
+            isProjectResult?.links?.length  && 
           <div className="dataList">
             <div className="dataListHead">Links</div>
             <div className="linkWrapper">
@@ -59,6 +61,8 @@ export const ResultModal = (props: IresultModalProps) => {
               ))}
             </div>
           </div>
+           }     
+
         </div>
         <div className="resultCloseButton" onClick={props.close}>X</div>
       </div>
