@@ -1,6 +1,6 @@
 import { Iproject } from "../types/projectTypes";
 
-const projects:Iproject[]= [
+let projects:Iproject[]= [
     {
         name: "Rule The World",
         description: "We threaten the world with the Great Secret Weapon. The world is scared and everyone surrenders to us. After that, we party a lot. We really beat Justin Bieber",
@@ -91,10 +91,10 @@ export function fakebackendAnswer (timeToWait: number) {
  }
 
  export function fakebackendDelete (deleteProjectID: number, timeToWait:number) {
-    const response = projects.filter(project => project.id !== deleteProjectID )
+     projects = projects.filter(project => project.id !== deleteProjectID )
     return new Promise (resolve => {
         setTimeout(() => {
-            resolve(response)
+            resolve(projects)
         }, timeToWait);
     })
 

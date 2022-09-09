@@ -34,9 +34,9 @@ export const NewProduct = (props: InewProductProps) => {
   return (
     <div className="newProductContainer">
       <div className="newProductInner">
-        <ProgressBar />
+        <ProgressBar actualPage={isPage} />
         <div onClick={props.close} className="closeButton">
-          {" "}
+       
           X
         </div>
         <div className="newProdPages">

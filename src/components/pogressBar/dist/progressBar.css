@@ -5,8 +5,7 @@
   justify-content: space-around;
   align-items: center;
 }
-.progressBarContainer div {
-  background-color: red;
+.progressBarContainer .progressCircle {
   height: 2.5rem;
   width: 2.5rem;
   border: 2px solid black;
@@ -16,4 +15,13 @@
   align-items: center;
   font-size: 1.5rem;
   font-weight: bolder;
+  transition: 0.5s;
+}
+
+.selectedCircle {
+  background-color: white;
+}
+
+.unSelectedCircle {
+  background-color: red;
 }
