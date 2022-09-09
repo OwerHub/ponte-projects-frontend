@@ -18,7 +18,6 @@ export const Main = () => {
 
  
  async  function addProject (project:Iproject){
-  console.log("in addProject")
   setNewModalOpen(false);
   const solved = await fakebackendAdd(project, 400)
   setProjectArray(solved as Iproject[])
