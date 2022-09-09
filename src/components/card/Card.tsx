@@ -16,7 +16,7 @@ export const Card = (props: IcardProps) => {
 
   return (
     <div className="cardOuter">
-      <div> {props.projectData.name}</div>
+      <div className="cardTitle"> {props.projectData.name}</div>
       <img src={placeHolderPic} alt="" />
       <div> {props.projectData.description}</div>
       <div className="buttonDiv">

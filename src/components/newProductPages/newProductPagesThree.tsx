@@ -82,7 +82,6 @@ export const NewProductPageThree = (props: IproductPageProps) => {
 
   return (
     <div className="newProdPageContainer">
-        
       <div className="newProgPageHead">Új Product Létrehozása 3</div>
       <div className="newProgPageBody newProdPage2">
         <div className="page2BodyWrapper">
@@ -118,6 +117,7 @@ export const NewProductPageThree = (props: IproductPageProps) => {
               />
               <div className="inputErrorDiv">{isErrorMessage.link}</div>
               <button
+                className="addButton"
                 disabled={
                   isErrorMessage.name.length !== 0 ||
                   isErrorMessage.link.length !== 0
@@ -130,18 +130,20 @@ export const NewProductPageThree = (props: IproductPageProps) => {
           </div>
 
           <div className="collaboratorWrapper">
-            <div className="collaboratorListhead">collaborator List</div>
+            <div className="collaboratorListhead">Link List</div>
             <div className="colllegeList">
               {isLinkList.map((link, iterator) => (
-                <div key={`collaboratorCard${iterator}`} className="collaboratorCard">
-                    <div className="collaboratorCardata">
-
-                  <div>{link.name}</div>
-                  <div>{link.link}</div>
-                    </div>
-                    <div className="delete" onClick={()=>deleteLink(link.id)}>
-                        delete
-                    </div>
+                <div
+                  key={`collaboratorCard${iterator}`}
+                  className="collaboratorCard"
+                >
+                  <div className="collaboratorCardata">
+                    <div>{link.name}</div>
+                    <div>{link.link}</div>
+                  </div>
+                  <div className="delete" onClick={() => deleteLink(link.id)}>
+                    delete
+                  </div>
                 </div>
               ))}
             </div>

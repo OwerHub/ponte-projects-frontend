@@ -73,7 +73,9 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
       <div className="newProgPageHead">Új Product Létrehozása 2</div>
       <div className="newProgPageBody newProdPage2">
         <div className="page2BodyWrapper">
+
           <div className="inputWrapper">
+
             <div className="collaboratorNameInputDiv inputDiv">
               <label htmlFor="name">Name</label>
               <input
@@ -105,6 +107,7 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
               />
               <div className="inputErrorDiv">{isErrorMessage.position}</div>
               <button
+                className="addButton"
                 disabled={
                   isErrorMessage.name.length !== 0 ||
                   isErrorMessage.position.length !== 0
@@ -114,11 +117,17 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
                 Add collaborator
               </button>
             </div>
+
           </div>
 
           <div className="collaboratorWrapper">
             <div className="collaboratorListhead">collaborator List</div>
             <div className="colllegeList">
+                {
+                  iscollaboratorList.length === 0 &&
+                  <div className="collabWarn">Select min one collaborator</div>
+                }
+              
               {iscollaboratorList.map((collaborator, iterator) => (
                 <div key={`collaboratorCard${iterator}`} className="collaboratorCard">
                   <div className="collaboratorCardata">
@@ -134,6 +143,7 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </div>

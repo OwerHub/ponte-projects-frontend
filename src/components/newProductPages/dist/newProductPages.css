@@ -93,3 +93,13 @@
 .newProdPage2 .page2BodyWrapper .collaboratorWrapper .colllegeList .collaboratorCard .delete:hover {
   color: red;
 }
+
+.addButton {
+  height: 2rem;
+}
+
+.collabWarn {
+  margin: 1rem 0;
+  text-align: center;
+  color: #C42021;
+}
