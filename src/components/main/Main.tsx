@@ -7,6 +7,7 @@ import { fakebackendAnswer,  fakebackendAdd, fakebackendDelete } from "../../ser
 import { CardContainer } from "../cardContainer/cardContainer";
 import { NewProduct } from "../newProduct/NewProduct";
 import { ResultModal } from "../resultModal/Resultmodal";
+import { LoadingSpinner } from "../loading/LoadngSpinner";
 
 export const Main = () => {
   const [isProjectArray, setProjectArray] = useState<Iproject[]>([]);
@@ -14,27 +15,34 @@ export const Main = () => {
 
   const [isNewModalOpen, setNewModalOpen] = useState<boolean>(false);
   const [isResultModalOpen, setResultModalOpen] = useState<boolean>(false) 
+  const [isLoading, setLoading] = useState<boolean>(false)
 
   const [isResultId, setResultId] = useState<number>(0) 
   const [isSearchText, setSearchText] = useState<string>("")
 
 
   async function askProject() {
+    setLoading(true)
     const solved = await fakebackendAnswer(1500);
     setProjectArray(solved as Iproject[]);
+    setLoading(false)
   }
-
- 
- async  function addProject (project:Iproject){
-  setNewModalOpen(false);
-  const solved = await fakebackendAdd(project, 400)
-  setProjectArray(solved as Iproject[])
+  
+  
+  async  function addProject (project:Iproject){
+    setLoading(true)
+    setNewModalOpen(false);
+    const solved = await fakebackendAdd(project, 400)
+    setProjectArray(solved as Iproject[])
+    setLoading(false)
   }
-
-
+  
+  
   async  function deleteProject  (deleteID:number){
+    setLoading(true)
     const solved = await fakebackendDelete(deleteID, 400)
     setProjectArray(solved as Iproject[])
+    setLoading(false)
     }
 
 
@@ -95,6 +103,12 @@ export const Main = () => {
            close={()=> setResultModalOpen(false)}
            />
         )}
+      </div>
+      <div>
+          {
+            isLoading &&
+        <LoadingSpinner/>
+          }
       </div>
 
     
