@@ -1,6 +1,6 @@
 # PonteProject
 
-this is trial task. Mange project, add collaborator, etc. 
+this is trial task. Mange project, add collaborator, etc. in React 
 I had more ideas, but now was all the time 
 
 # to run
