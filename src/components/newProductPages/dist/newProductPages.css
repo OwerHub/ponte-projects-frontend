@@ -1,0 +1,47 @@
+.newProdPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+}
+.newProdPageContainer .newProgPageHead {
+  justify-content: center;
+  text-align: center;
+  padding: 0.2rem 0;
+}
+.newProdPageContainer .newProdPageFooter {
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.newProdPageContainer .newProdPageFooter button {
+  padding: 0.3rem;
+  width: 5rem;
+}
+
+.inputsStandard, .newProdPage1 .inputDiv textarea, .newProdPage1 .inputDiv input {
+  font-size: 130%;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 10px;
+}
+
+.newProdPage1 .inputDiv {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 2rem 0.5rem 1rem;
+}
+.newProdPage1 .inputDiv input {
+  width: 50%;
+}
+.newProdPage1 .inputDiv textarea {
+  resize: none;
+  width: 50%;
+}
+.newProdPage1 .inputDiv .inputErrorDiv {
+  height: 2rem;
+}

@@ -1,0 +1,61 @@
+
+
+.newProdPageContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+
+    .newProgPageHead{
+        justify-content: center;
+        text-align: center;
+        padding: .2rem 0;
+    }
+
+    .newProdPageFooter{
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        button{
+            padding: .3rem ;
+            width: 5rem;
+
+        }
+    }
+}
+
+.inputsStandard{
+    font-size: 130%;
+    border: none;
+    border-radius: .3rem;
+    padding: 10px
+}
+
+.newProdPage1{
+    .inputDiv{
+        //background-color: red;
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        padding: 0 2rem .5rem 1rem;
+        input{
+            @extend .inputsStandard;
+            width: 50%;
+            
+        }
+        textarea{
+            @extend .inputsStandard;
+            resize: none;
+            width: 50%;
+        }
+        .inputErrorDiv{
+            height: 2rem;
+         
+
+        }
+        
+    }
+}

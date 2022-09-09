@@ -14,4 +14,10 @@
   height: 90vh;
   width: 90vw;
   border-radius: 1rem;
+  overflow: hidden;
+}
+
+.newProdPages {
+  height: 80vh;
+  background-color: #e6bff1;
 }
