@@ -1,9 +1,12 @@
 import "./dist/newProductPages.css";
 import { useState, useEffect } from "react";
 import { nameValidator, descriptionValidator } from "../../services/validators";
+import {Iproject} from "../../types/projectTypes"
 
 interface IproductPageProps {
   pageSetter: (page: number) => void;
+  projectDataSetter: (project: Iproject) => void;
+  projectDatas: Iproject
 }
 
 interface IerrorMessages {
@@ -22,12 +25,21 @@ export const NewProdPageOne = (props: IproductPageProps) => {
     description: "",
   });
 
+
+  // előszörre ne 
   const [isFirst, setFirst] = useState<boolean>(true)
 
   const nextButtonHandler = () => {
-    // állítsa be a product adatait
-    // változtassa meg a page értékét
-    // állítsa át az egyszer már próbálta értéket
+
+    
+
+    props.projectDataSetter({
+       ...props.projectDatas,
+      name:isValuesPageOne.name,
+      description: isValuesPageOne.description
+    })
+    props.pageSetter(2)
+
   };
 
   const validatePageOne = () => {
@@ -43,6 +55,17 @@ export const NewProdPageOne = (props: IproductPageProps) => {
     setFirst(false)
 
   }, [isValuesPageOne]);
+
+
+  useEffect(() => {
+   
+
+    setValuesPageOne({
+        name: props.projectDatas.name,
+        description: props.projectDatas.description as string
+    })
+  }, [])
+  
 
   return (
     <div className="newProdPageContainer">
@@ -86,7 +109,7 @@ export const NewProdPageOne = (props: IproductPageProps) => {
             isErrorMessage.name.length !== 0 ||
             isErrorMessage.description.length !== 0 
           }
-          onClick={() => props.pageSetter(2)}
+          onClick={()=>nextButtonHandler()}
         >
           next
         </button>

@@ -9,6 +9,7 @@ export interface Iproject  {
     description?: string
     colleges: Icollege[]
     links?: string []
+    id: number
 }
 
 
