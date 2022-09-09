@@ -22,10 +22,7 @@ const [isProjectDatas, setProjectDatas] = useState<Iproject>(
 )   
 
 
-const test = (datas:Iproject) => {
-    console.log("ez a bejö")
-    console.log(datas)
-} 
+
 
 console.log(isProjectDatas)
 
@@ -37,10 +34,13 @@ console.log(isProjectDatas)
                     {isPage === 1 &&  <NewProdPageOne  
                     pageSetter={(page)=>setPage(page)}
                     projectDataSetter={(set)=>setProjectDatas(set)}
-                    //projectDataSetter={()=>test()}
                     projectDatas={isProjectDatas}
                     />}
-                    {isPage === 2 &&  <NewProductPageTwo  pageSetter={(page)=>setPage(page)}/>}
+                    {isPage === 2 &&  <NewProductPageTwo 
+                     pageSetter={(page)=>setPage(page)}
+                     projectDataSetter={(set)=>setProjectDatas(set)}
+                     projectDatas={isProjectDatas}
+                     />}
                     {isPage === 3 &&  <NewProductPageThree  pageSetter={(page)=>setPage(page)}/>}
                 </div>
             </div>
