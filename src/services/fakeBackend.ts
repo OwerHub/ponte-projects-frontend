@@ -70,3 +70,32 @@ export function fakebackendAnswer (timeToWait: number) {
         }, timeToWait);
     })
  }
+
+ export function fakebackendAdd (project: Iproject, timeToWait:number)  {
+
+    if(!projects.some((oneProject) => oneProject.id === project.id)){
+        projects.push(project)
+    } else (
+        console.log("ebbű kettő van!")
+    )
+
+
+    console.log(projects )
+
+    return new Promise (resolve => {
+        setTimeout(() => {
+            resolve(projects)
+        }, timeToWait);
+    })
+
+ }
+
+ export function fakebackendDelete (deleteProjectID: number, timeToWait:number) {
+    const response = projects.filter(project => project.id !== deleteProjectID )
+    return new Promise (resolve => {
+        setTimeout(() => {
+            resolve(response)
+        }, timeToWait);
+    })
+
+ }
