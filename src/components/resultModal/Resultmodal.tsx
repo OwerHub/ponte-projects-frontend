@@ -1,5 +1,6 @@
 import "./dist/resultModal.css";
-import placeholder from "../../img/placeholder.jpg";
+//import placeholder from "../../img/placeholder.jpg";
+import { PictureFromText } from "../picture/PictureFromText";
 
 import { fakebackendResults } from "../../services/fakeBackend";
 import { Iproject } from "../../types/projectTypes";
@@ -38,7 +39,14 @@ export const ResultModal = (props: IresultModalProps) => {
       <div className="resultModalContainer">
         <div className="projectName">{isProjectResult?.name}</div>
         <div className="pictureDiv">
-          <img src={placeholder} alt="" />
+          {/* <img src={placeholder} alt="" /> */}
+          {
+          isProjectResult?.name &&
+            <PictureFromText 
+              letterA={isProjectResult?.name.toUpperCase().slice(0,1)} 
+              letterB={isProjectResult?.name.toUpperCase().slice(1,2)}
+              />
+          }
         </div>
         <div className="resultDiv">{isProjectResult?.description}</div>
 

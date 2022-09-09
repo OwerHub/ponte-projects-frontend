@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Iproject } from "../../types/projectTypes";
 import { fakebackendAnswer,  fakebackendAdd, fakebackendDelete } from "../../services/fakeBackend";
 
+import { PictureFromText } from "../picture/PictureFromText";
 import { CardContainer } from "../cardContainer/cardContainer";
 import { NewProduct } from "../newProduct/NewProduct";
 import { ResultModal } from "../resultModal/Resultmodal";
@@ -68,6 +69,7 @@ export const Main = () => {
 
   return (
     <div className="mainWrapper">
+
       <div className="head">
         <h1>PonteProjects</h1>
         <div className="headHandles">
