@@ -1,61 +1,82 @@
+.newProdPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+
+  .newProgPageHead {
+    justify-content: center;
+    text-align: center;
+    padding: 0.2rem 0;
+  }
+
+  .newProdPageFooter {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    button {
+      padding: 0.3rem;
+      width: 5rem;
+    }
+  }
+}
+
+.inputsStandard {
+  font-size: 130%;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 10px;
+}
 
 
-.newProdPageContainer{
+.inputDivStandard{
+
+    margin: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 80vh;
-
-    .newProgPageHead{
-        justify-content: center;
-        text-align: center;
-        padding: .2rem 0;
-    }
-
-    .newProdPageFooter{
-        background-color: aqua;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        padding: 1rem 0;
-        button{
-            padding: .3rem ;
-            width: 5rem;
-
-        }
-    }
+    gap: 0.5rem;
+    justify-content: center;
+}
+.inputErrorDiv {
+    height: 2rem;
 }
 
-.inputsStandard{
-    font-size: 130%;
-    border: none;
-    border-radius: .3rem;
-    padding: 10px
-}
-
-.newProdPage1{
-    .inputDiv{
-        //background-color: red;
-        margin: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: .5rem;
-        padding: 0 2rem .5rem 1rem;
-        input{
+.newProdPage1 {
+    .inputDiv {
+        @extend .inputDivStandard;
+        padding: 0 2rem 0.5rem 1rem;
+        input {
             @extend .inputsStandard;
             width: 50%;
-            
         }
-        textarea{
+        textarea {
             @extend .inputsStandard;
             resize: none;
-            width: 50%;
-        }
-        .inputErrorDiv{
-            height: 2rem;
-         
-
-        }
-        
+      width: 50%;
     }
+  
+}
+}
+
+.newProdPage2 {
+    .page2BodyWrapper {
+        display: flex;
+        height: 65vh;
+        .inputWrapper {
+            //background-color: red;
+           /*  display: flex;
+            flex-direction: column;
+            justify-content: center; */
+            padding: 5vh 0 0 ;
+            width: 50%;
+            .inputDiv{
+        @extend .inputDivStandard;
+        input{
+            @extend .inputsStandard;
+        }
+      }
+    }
+  }
 }

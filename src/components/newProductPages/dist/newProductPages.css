@@ -21,18 +21,26 @@
   width: 5rem;
 }
 
-.inputsStandard, .newProdPage1 .inputDiv textarea, .newProdPage1 .inputDiv input {
+.inputsStandard, .newProdPage2 .page2BodyWrapper .inputWrapper .inputDiv input, .newProdPage1 .inputDiv textarea, .newProdPage1 .inputDiv input {
   font-size: 130%;
   border: none;
   border-radius: 0.3rem;
   padding: 10px;
 }
 
-.newProdPage1 .inputDiv {
+.inputDivStandard, .newProdPage2 .page2BodyWrapper .inputWrapper .inputDiv, .newProdPage1 .inputDiv {
   margin: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  justify-content: center;
+}
+
+.inputErrorDiv {
+  height: 2rem;
+}
+
+.newProdPage1 .inputDiv {
   padding: 0 2rem 0.5rem 1rem;
 }
 .newProdPage1 .inputDiv input {
@@ -42,6 +50,15 @@
   resize: none;
   width: 50%;
 }
-.newProdPage1 .inputDiv .inputErrorDiv {
-  height: 2rem;
+
+.newProdPage2 .page2BodyWrapper {
+  display: flex;
+  height: 65vh;
+}
+.newProdPage2 .page2BodyWrapper .inputWrapper {
+  /*  display: flex;
+   flex-direction: column;
+   justify-content: center; */
+  padding: 5vh 0 0;
+  width: 50%;
 }
