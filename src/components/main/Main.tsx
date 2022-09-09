@@ -46,19 +46,20 @@ export const Main = () => {
     }
 
 
-    const showresult = (id:number) => {
-      setResultId(id)
-      setResultModalOpen(true)
-    }
+    const showresult = (id: number) => {
+      setResultId(id);
+      setResultModalOpen(true);
+    };
 
-     const filterProjectArray = (projectArray:Iproject[]) => {
-      if (isSearchText.length === 0){
-        return projectArray 
-      }  
+     const filterProjectArray = (projectArray: Iproject[]) => {
+       if (isSearchText.length === 0) {
+         return projectArray;
+       }
 
-      return projectArray.filter(project => project.name.toLowerCase().match(isSearchText.toLowerCase()))
-      
-     }
+       return projectArray.filter((project) =>
+         project.name.toLowerCase().match(isSearchText.toLowerCase())
+       );
+     };
 
 
   useEffect(() => {
@@ -67,23 +68,25 @@ export const Main = () => {
 
   return (
     <div className="mainWrapper">
-
       <div className="head">
         <h1>PonteProjects</h1>
         <div className="headHandles">
-        <button onClick={() => setNewModalOpen(true)}>new task</button>
-        <input type="text"  placeholder="search" onChange={(e)=>setSearchText(e.target.value)}/>
-          
+          <button onClick={() => setNewModalOpen(true)}>new task</button>
+          <input
+            type="text"
+            placeholder="search"
+            onChange={(e) => setSearchText(e.target.value)}
+          />
         </div>
       </div>
 
       <div className="cardDiv">
         {isProjectArray.length > 0 && (
-          <CardContainer 
-            projects={filterProjectArray(isProjectArray)} 
-            deleteCard={(id) =>deleteProject(id)} 
+          <CardContainer
+            projects={filterProjectArray(isProjectArray)}
+            deleteCard={(id) => deleteProject(id)}
             resultCard={(id) => showresult(id)}
-            />
+          />
         )}
       </div>
 
@@ -99,20 +102,13 @@ export const Main = () => {
 
         {isResultModalOpen && (
           <ResultModal
-           id={isResultId}
-           close={()=> setResultModalOpen(false)}
-           />
+            id={isResultId}
+            close={() => setResultModalOpen(false)}
+          />
         )}
       </div>
-      <div>
-          {
-            isLoading &&
-        <LoadingSpinner/>
-          }
-      </div>
 
-    
-
+      <div>{isLoading && <LoadingSpinner />}</div>
     </div>
   );
 };

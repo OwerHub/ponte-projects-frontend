@@ -1,5 +1,5 @@
 .progressBarContainer {
-  background-color: coral;
+  background-color: #C42021;
   height: 10vh;
   display: flex;
   justify-content: space-around;
@@ -23,5 +23,5 @@
 }
 
 .unSelectedCircle {
-  background-color: red;
+  background-color: #C42021;
 }

@@ -1,5 +1,8 @@
+@import "../../style/colors";
+
 .progressBarContainer{
-    background-color: coral;
+    //background-color: $complementer-dark;
+    background-color: $complementer-red;
     height: 10vh;
     display: flex;
     justify-content: space-around;
@@ -22,6 +25,6 @@
     background-color: white;
 }
 .unSelectedCircle{
-    background-color: red;
+    background-color: $complementer-red;
 
 }

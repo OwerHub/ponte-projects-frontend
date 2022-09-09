@@ -1,3 +1,5 @@
+@import "../../style/colors";
+
 .newProdPageContainer {
   display: flex;
   flex-direction: column;
@@ -11,7 +13,8 @@
   }
 
   .newProdPageFooter {
-    background-color: aqua;
+    //background-color: $complementer-red;
+    background-color: $complementer-dark;
     display: flex;
     justify-content: center;
     gap: 1rem;

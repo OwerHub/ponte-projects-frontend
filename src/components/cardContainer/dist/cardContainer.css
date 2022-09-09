@@ -1,8 +1,6 @@
-.cardContainerOuter {
-  background-color: green;
-}
-
 .cardWrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 0.5rem;
 }

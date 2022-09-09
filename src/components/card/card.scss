@@ -1,6 +1,7 @@
+@import "../../style/colors";
 
 .cardOuter{
-    background-color: red;
+    background-color: $ponte-blue-dark;
     width: 20%;
     min-width: 230px;
     // kell majd min vagy max with

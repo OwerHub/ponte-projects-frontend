@@ -1,11 +1,22 @@
+@import "../../style/colors";
+
 .mainWrapper{
-    
+    min-height: 100vh;
+    background-color:  rgba($elegant-grey, $alpha: .2);
+;
 }
 .head{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 0 1rem;;
+    padding: 1rem 0 1rem;;
+    background-color: $complementer-dark;
+    color: whitesmoke;
+    .headHandles{
+        margin: 10px 0 0 ;
+        display: flex;
+        gap: 3rem;
+    }
 }
 
 h1{
@@ -13,5 +24,5 @@ h1{
 }
 
 .cardDiv{
-    background-color: aqua;
+    //background-color: aqua;
 }

@@ -1,3 +1,5 @@
+@import "../../style/colors";
+
 .newProductContainer {
     background-color: rgba($color: #000000, $alpha: .5);
     position: fixed;
@@ -20,7 +22,7 @@
 
 .newProdPages{
     height: 80vh;
-    background-color: rgb(230, 191, 241);
+    background-color: $silk;
 }
 
 .closeButton{
@@ -30,6 +32,7 @@
     width: 1rem;
     height: 1rem;
     padding: .8rem;
+    color: whitesmoke;
     border: 2px solid white;
     border-radius: 50%;
     display: flex;
@@ -38,8 +41,9 @@
     cursor: pointer;
     transition: .3s;
     &:hover{
-        border: 2px solid red;
-        color: red;
+        border: 2px solid black;
+       
+        color: black;
         font-weight: bold;
         border-radius: 25%;
     }
