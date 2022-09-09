@@ -48,7 +48,13 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
     setValuesPageTwo({ name: "", position: "" });
   };
 
-  console.log(isCollegeList);
+
+  const deleteCollege = (id:number) => {
+    setCollegeList((prev) => prev.filter(college => college.id !== id))
+  }
+
+
+
 
   useEffect(() => {
     collegeValidator();
@@ -109,8 +115,14 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
             <div className="colllegeList">
               {isCollegeList.map((college, iterator) => (
                 <div key={`collegeCard${iterator}`} className="collegeCard">
+                    <div className="collegeCardata">
+
                   <div>{college.name}</div>
                   <div>{college.position}</div>
+                    </div>
+                    <div className="delete" onClick={()=>deleteCollege(college.id)}>
+                        delete
+                    </div>
                 </div>
               ))}
             </div>
@@ -120,7 +132,7 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
 
       <div className="newProdPageFooter">
         <button onClick={() => props.pageSetter(1)}>Prev</button>
-        <button onClick={() => props.pageSetter(4)}>next</button>
+        <button onClick={() => props.pageSetter(3)} disabled={isCollegeList.length===0} >next</button>
       </div>
     </div>
   );

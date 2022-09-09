@@ -77,10 +77,19 @@
   padding: 0.3rem 0.8rem 0.5rem;
   border-radius: 5px;
   background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard div:first-child {
+.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard .collegeCardata div:first-child {
   font-weight: bold;
 }
-.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard div:nth-child(2) {
+.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard .collegeCardata div:nth-child(2) {
   margin: 0 0 0 1rem;
+}
+.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard .delete {
+  cursor: pointer;
+}
+.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard .delete:hover {
+  color: red;
 }
