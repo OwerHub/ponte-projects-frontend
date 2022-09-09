@@ -79,15 +79,15 @@
             }
         }
         
-        .collegeWrapper{
+        .collaboratorWrapper{
         width: 50%;
-        .collegeListhead{
+        .collaboratorListhead{
             text-align: center;
         }
         .colllegeList{
             overflow-y: auto;
             height: 65vh;
-            .collegeCard{
+            .collaboratorCard{
                 margin: 1rem .8rem;
                 padding: .3rem .8rem .5rem;
                 border-radius: 5px;
@@ -95,7 +95,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                .collegeCardata{
+                .collaboratorCardata{
                     
                     div:first-child{
                         font-weight: bold;

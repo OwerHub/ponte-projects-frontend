@@ -17,7 +17,7 @@ export const NewProduct = (props: InewProductProps) => {
   const [isProjectDatas, setProjectDatas] = useState<Iproject>({
     name: "",
     description: "",
-    colleges: [],
+    collaborators: [],
     links: [],
     id: 111,
   });

@@ -32,7 +32,7 @@ export const NewProductPageThree = (props: IproductPageProps) => {
 
   const [isLinkList, setLinkList] = useState<IlinkData[]>([]);
 
-  const collegeValidator = () => {
+  const collaboratorValidator = () => {
     setErrorMessage((prev) => ({
       ...prev,
       name: characterValidator(isValuesPageThree.name, 4),
@@ -77,7 +77,7 @@ export const NewProductPageThree = (props: IproductPageProps) => {
 
 
   useEffect(() => {
-    collegeValidator();
+    collaboratorValidator();
   }, [isValuesPageThree]);
 
   return (
@@ -87,7 +87,7 @@ export const NewProductPageThree = (props: IproductPageProps) => {
       <div className="newProgPageBody newProdPage2">
         <div className="page2BodyWrapper">
           <div className="inputWrapper">
-            <div className="collegeNameInputDiv inputDiv">
+            <div className="collaboratorNameInputDiv inputDiv">
               <label htmlFor="name">Name</label>
               <input
                 value={isValuesPageThree.name}
@@ -103,7 +103,7 @@ export const NewProductPageThree = (props: IproductPageProps) => {
               <div className="inputErrorDiv">{isErrorMessage.name}</div>
             </div>
 
-            <div className="collegePosInputDiv inputDiv">
+            <div className="collaboratorPosInputDiv inputDiv">
               <label htmlFor="name">Link</label>
               <input
                 value={isValuesPageThree.link}
@@ -129,12 +129,12 @@ export const NewProductPageThree = (props: IproductPageProps) => {
             </div>
           </div>
 
-          <div className="collegeWrapper">
-            <div className="collegeListhead">College List</div>
+          <div className="collaboratorWrapper">
+            <div className="collaboratorListhead">collaborator List</div>
             <div className="colllegeList">
               {isLinkList.map((link, iterator) => (
-                <div key={`collegeCard${iterator}`} className="collegeCard">
-                    <div className="collegeCardata">
+                <div key={`collaboratorCard${iterator}`} className="collaboratorCard">
+                    <div className="collaboratorCardata">
 
                   <div>{link.name}</div>
                   <div>{link.link}</div>

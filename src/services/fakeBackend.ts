@@ -6,7 +6,7 @@ let projects: Iproject[] = [
     name: "Rule The World",
     description:
       "We threaten the world with the Great Secret Weapon. The world is scared and everyone surrenders to us. After that, we party a lot. We really beat Justin Bieber",
-    colleges: [
+    collaborators: [
       {
         name: "Dr. No",
         position: "Answer the questions as his name",
@@ -30,7 +30,7 @@ let projects: Iproject[] = [
     name: "Develop the secret weapon",
     description:
       "kidnap the best scientists, force them to work, and in the end, wipe their 4000 hours of minecraft saves... muhahahha",
-    colleges: [
+    collaborators: [
       {
         name: "Thomas Gabriel",
         position: "he is a genius... we need it",

@@ -34,15 +34,15 @@ export const ResultModal = (props: IresultModalProps) => {
         <div className="dataListDivWrapper">
 
           <div className="dataList">
-            <div className="dataListHead">Colleges</div>
-            <div className="collegesWrapper">
-              {isProjectResult?.colleges?.map((college, iterator) => (
+            <div className="dataListHead">collaborators</div>
+            <div className="collaboratorsWrapper">
+              {isProjectResult?.collaborators?.map((collaborator, iterator) => (
                 <div
-                  key={`collegeDiv${iterator}`}
-                  className="collegeDataWrapper"
+                  key={`collaboratorDiv${iterator}`}
+                  className="collaboratorDataWrapper"
                 >
-                  <div>{college.name}</div>
-                  <div>{college.position}</div>
+                  <div>{collaborator.name}</div>
+                  <div>{collaborator.position}</div>
                 </div>
               ))}
             </div>

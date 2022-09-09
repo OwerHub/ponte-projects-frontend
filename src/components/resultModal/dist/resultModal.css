@@ -82,13 +82,13 @@
   font-weight: bold;
   margin: 0 0 0.5rem;
 }
-.dataListDivWrapper .dataList .collegeDataWrapper {
+.dataListDivWrapper .dataList .collaboratorDataWrapper {
   margin: 0.2rem 0;
   padding: 0.3rem;
   border-radius: 0.3rem;
   border: 1px solid black;
 }
-.dataListDivWrapper .dataList .collegeDataWrapper div:first-child {
+.dataListDivWrapper .dataList .collaboratorDataWrapper div:first-child {
   font-weight: bold;
 }
 .dataListDivWrapper .dataList .linkDataWrapper {

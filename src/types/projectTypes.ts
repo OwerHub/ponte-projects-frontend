@@ -1,4 +1,4 @@
-export interface Icollege {
+export interface Icollaborator {
     id: number
     name: string
     position: string
@@ -13,7 +13,7 @@ export interface IlinkData{
 export interface Iproject  {
     name: string
     description?: string
-    colleges: Icollege[]
+    collaborators: Icollaborator[]
     links?: IlinkData[]
     id: number
 }

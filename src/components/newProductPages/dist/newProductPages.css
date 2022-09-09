@@ -62,17 +62,17 @@
   padding: 5vh 0 0;
   width: 50%;
 }
-.newProdPage2 .page2BodyWrapper .collegeWrapper {
+.newProdPage2 .page2BodyWrapper .collaboratorWrapper {
   width: 50%;
 }
-.newProdPage2 .page2BodyWrapper .collegeWrapper .collegeListhead {
+.newProdPage2 .page2BodyWrapper .collaboratorWrapper .collaboratorListhead {
   text-align: center;
 }
-.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList {
+.newProdPage2 .page2BodyWrapper .collaboratorWrapper .colllegeList {
   overflow-y: auto;
   height: 65vh;
 }
-.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard {
+.newProdPage2 .page2BodyWrapper .collaboratorWrapper .colllegeList .collaboratorCard {
   margin: 1rem 0.8rem;
   padding: 0.3rem 0.8rem 0.5rem;
   border-radius: 5px;
@@ -81,15 +81,15 @@
   justify-content: space-between;
   align-items: center;
 }
-.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard .collegeCardata div:first-child {
+.newProdPage2 .page2BodyWrapper .collaboratorWrapper .colllegeList .collaboratorCard .collaboratorCardata div:first-child {
   font-weight: bold;
 }
-.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard .collegeCardata div:nth-child(2) {
+.newProdPage2 .page2BodyWrapper .collaboratorWrapper .colllegeList .collaboratorCard .collaboratorCardata div:nth-child(2) {
   margin: 0 0 0 1rem;
 }
-.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard .delete {
+.newProdPage2 .page2BodyWrapper .collaboratorWrapper .colllegeList .collaboratorCard .delete {
   cursor: pointer;
 }
-.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard .delete:hover {
+.newProdPage2 .page2BodyWrapper .collaboratorWrapper .colllegeList .collaboratorCard .delete:hover {
   color: red;
 }

@@ -1,7 +1,7 @@
 import "./dist/newProductPages.css";
 import { useState, useEffect } from "react";
 import { characterValidator } from "../../services/validators";
-import { Icollege, Iproject } from "../../types/projectTypes";
+import { Icollaborator, Iproject } from "../../types/projectTypes";
 
 interface IproductPageProps {
   pageSetter: (page: number) => void;
@@ -9,11 +9,11 @@ interface IproductPageProps {
   projectDatas: Iproject;
 }
 
-interface InputCollege {
+interface Inputcollaborator {
   name: string;
   position: string;
 }
-interface IerrorMessagePage2 extends InputCollege {
+interface IerrorMessagePage2 extends Inputcollaborator {
   next?: string;
 }
 
@@ -23,14 +23,14 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
     position: "",
   });
 
-  const [isValuesPageTwo, setValuesPageTwo] = useState<InputCollege>({
+  const [isValuesPageTwo, setValuesPageTwo] = useState<Inputcollaborator>({
     name: "",
     position: "",
   });
 
-  const [isCollegeList, setCollegeList] = useState<Icollege[]>([]);
+  const [iscollaboratorList, setcollaboratorList] = useState<Icollaborator[]>([]);
 
-  const collegeValidator = () => {
+  const collaboratorValidator = () => {
     setErrorMessage((prev) => ({
       ...prev,
       name: characterValidator(isValuesPageTwo.name, 4),
@@ -39,33 +39,33 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
   };
 
   const addToArray = () => {
-    const newCollege: Icollege = {
+    const newcollaborator: Icollaborator = {
       ...isValuesPageTwo,
       id: Date.now(),
     };
-    setCollegeList((prev) => [...prev, newCollege]);
+    setcollaboratorList((prev) => [...prev, newcollaborator]);
     setValuesPageTwo({ name: "", position: "" });
   };
 
   const nextButtonHandler = () => {
     props.projectDataSetter({
       ...props.projectDatas,
-        colleges:isCollegeList
+        collaborators:iscollaboratorList
     });
     props.pageSetter(3);
   };
 
 
-  const deleteCollege = (id: number) => {
-    setCollegeList((prev) => prev.filter((college) => college.id !== id));
+  const deletecollaborator = (id: number) => {
+    setcollaboratorList((prev) => prev.filter((collaborator) => collaborator.id !== id));
   };
 
   useEffect(() => {
-    collegeValidator();
+    collaboratorValidator();
   }, [isValuesPageTwo]);
 
   useEffect(() => {
-    setCollegeList(props.projectDatas.colleges)
+    setcollaboratorList(props.projectDatas.collaborators)
   }, []);
 
   return (
@@ -74,7 +74,7 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
       <div className="newProgPageBody newProdPage2">
         <div className="page2BodyWrapper">
           <div className="inputWrapper">
-            <div className="collegeNameInputDiv inputDiv">
+            <div className="collaboratorNameInputDiv inputDiv">
               <label htmlFor="name">Name</label>
               <input
                 value={isValuesPageTwo.name}
@@ -90,7 +90,7 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
               <div className="inputErrorDiv">{isErrorMessage.name}</div>
             </div>
 
-            <div className="collegePosInputDiv inputDiv">
+            <div className="collaboratorPosInputDiv inputDiv">
               <label htmlFor="name">Position</label>
               <input
                 value={isValuesPageTwo.position}
@@ -111,23 +111,23 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
                 }
                 onClick={() => addToArray()}
               >
-                Add College
+                Add collaborator
               </button>
             </div>
           </div>
 
-          <div className="collegeWrapper">
-            <div className="collegeListhead">College List</div>
+          <div className="collaboratorWrapper">
+            <div className="collaboratorListhead">collaborator List</div>
             <div className="colllegeList">
-              {isCollegeList.map((college, iterator) => (
-                <div key={`collegeCard${iterator}`} className="collegeCard">
-                  <div className="collegeCardata">
-                    <div>{college.name}</div>
-                    <div>{college.position}</div>
+              {iscollaboratorList.map((collaborator, iterator) => (
+                <div key={`collaboratorCard${iterator}`} className="collaboratorCard">
+                  <div className="collaboratorCardata">
+                    <div>{collaborator.name}</div>
+                    <div>{collaborator.position}</div>
                   </div>
                   <div
                     className="delete"
-                    onClick={() => deleteCollege(college.id)}
+                    onClick={() => deletecollaborator(collaborator.id)}
                   >
                     delete
                   </div>
@@ -142,7 +142,7 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
         <button onClick={() => props.pageSetter(1)}>Prev</button>
         <button
           onClick={() => nextButtonHandler()}
-          disabled={isCollegeList.length === 0}
+          disabled={iscollaboratorList.length === 0}
         >
           next
         </button>
