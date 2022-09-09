@@ -1,21 +1,110 @@
-.resultModalOuter{
-    background-color: rgba($color: #000000, $alpha: .5);
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
+.resultModalOuter {
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resultModalContainer {
+position: relative;
+  width: 50vw;
+  min-height: 80vh;
+  max-height: 95vh;
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.resultCloseButton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 1rem;
+    height: 1rem;
+    padding: .3rem;
+    border: 2px solid Black;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: .3s;
+    &:hover{
+        border: 2px solid red;
+        color: red;
+        font-weight: bold;
+        border-radius: 25%;
+    }
 }
 
-.resultModalContainer{
-    width: 50vw;
-    min-height: 80vh;
-    background-color: white;
-    border-radius: .5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+.paragraphs {
+  width: 80%;
+}
+
+.projectName {
+  margin: 0 0 0.3rem;
+  font-weight: bolder;
+  font-size: 150%;
+}
+
+.pictureDiv {
+  height: 200px;
+  width: 200px;
+  img {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+.resultDiv {
+  @extend .paragraphs;
+  margin: .5rem 0;
+
+}
+
+.dataListDivWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  .dataList {
+    overflow-y: auto;
+
+    .dataListHead{
+        text-align: center;
+        font-weight: bold;
+        margin: 0 0 .5rem;
+    }
+    .collegeDataWrapper{
+        //background-color: red;
+        margin: .2rem 0;
+        padding: .3rem;
+        border-radius: .3rem;
+        border: 1px solid black;
+        div:first-child{
+            font-weight: bold;
+        }
+    }
+    
+    .linkDataWrapper{
+        //background-color: red;
+        margin: .2rem 0;
+        padding: .3rem;
+        border-radius: .3rem;
+        border: 1px solid black;
+        div:first-child{
+            font-weight: bold;
+        }
+    }
+   
+    
+  }
 }

@@ -10,8 +10,14 @@ import { ResultModal } from "../resultModal/Resultmodal";
 
 export const Main = () => {
   const [isProjectArray, setProjectArray] = useState<Iproject[]>([]);
+  
+
   const [isNewModalOpen, setNewModalOpen] = useState<boolean>(false);
-  const [isResultModalOpen, setResultModalOpen] = useState<boolean>(true) 
+  const [isResultModalOpen, setResultModalOpen] = useState<boolean>(false) 
+
+  const [isResultId, setResultId] = useState<number>(0) 
+  const [isSearchText, setSearchText] = useState<string>("")
+
 
   async function askProject() {
     const solved = await fakebackendAnswer(1500);
@@ -33,8 +39,19 @@ export const Main = () => {
 
 
     const showresult = (id:number) => {
-
+      setResultId(id)
+      setResultModalOpen(true)
     }
+
+     const filterProjectArray = (projectArray:Iproject[]) => {
+      if (isSearchText.length === 0){
+        return projectArray 
+      }  
+
+      return projectArray.filter(project => project.name.toLowerCase().match(isSearchText.toLowerCase()))
+      
+     }
+
 
   useEffect(() => {
     askProject();
@@ -45,13 +62,17 @@ export const Main = () => {
 
       <div className="head">
         <h1>PonteProjects</h1>
+        <div className="headHandles">
         <button onClick={() => setNewModalOpen(true)}>new task</button>
+        <input type="text"  placeholder="search" onChange={(e)=>setSearchText(e.target.value)}/>
+          
+        </div>
       </div>
 
       <div className="cardDiv">
         {isProjectArray.length > 0 && (
           <CardContainer 
-            projects={isProjectArray} 
+            projects={filterProjectArray(isProjectArray)} 
             deleteCard={(id) =>deleteProject(id)} 
             resultCard={(id) => showresult(id)}
             />
@@ -69,7 +90,10 @@ export const Main = () => {
         )}
 
         {isResultModalOpen && (
-          <ResultModal id={4243}/>
+          <ResultModal
+           id={234234234234}
+           close={()=> setResultModalOpen(false)}
+           />
         )}
       </div>
 
