@@ -1,55 +1,57 @@
 import "./dist/newProductPages.css";
 import { useState, useEffect } from "react";
 import { characterValidator } from "../../services/validators";
-import { Icollege } from "../../types/projectTypes";
 
 interface IproductPageProps {
   pageSetter: (page: number) => void;
 }
 
-interface InputCollege {
-  name: string;
-  position: string;
-}
-interface IerrorMessagePage2 extends InputCollege {
-  next?: string;
+interface IerrorMessagePage3 {
+    name: string;
+    link: string;
+  }
+
+interface IlinkData extends IerrorMessagePage3{
+    id: number
 }
 
-export const NewProductPageTwo = (props: IproductPageProps) => {
-  const [isErrorMessage, setErrorMessage] = useState<IerrorMessagePage2>({
+
+export const NewProductPageThree = (props: IproductPageProps) => {
+  const [isErrorMessage, setErrorMessage] = useState<IerrorMessagePage3>({
     name: "",
-    position: ""
+    link: "",
+
   });
 
-  const [isValuesPageTwo, setValuesPageTwo] = useState<InputCollege>({
+  const [isValuesPageThree, setValuesPageThree] = useState<IerrorMessagePage3>({
     name: "",
-    position: "",
+    link: "",
   });
 
-  const [isCollegeList, setCollegeList] = useState<Icollege[]>([]);
+  const [isLinkList, setLinkList] = useState<IlinkData[]>([]);
 
   const collegeValidator = () => {
     setErrorMessage((prev) => ({
       ...prev,
-      name: characterValidator(isValuesPageTwo.name, 4),
-      position: characterValidator(isValuesPageTwo.position, 4),
+      name: characterValidator(isValuesPageThree.name, 4),
+     link: characterValidator(isValuesPageThree.link, 4),
     }));
   };
 
   const addToArray = () => {
-    const newCollege: Icollege = {
-      ...isValuesPageTwo,
-      id: Date.now(),
+    const newLink: IlinkData = {
+      ...isValuesPageThree,
+      id:  Date.now(), 
     };
 
-    setCollegeList((prev) => [...prev, newCollege]);
+    setLinkList((prev) => [...prev, newLink]);
 
-    setValuesPageTwo({ name: "", position: "" });
+    setValuesPageThree({ name: "", link: "" });
   };
 
 
-  const deleteCollege = (id:number) => {
-    setCollegeList((prev) => prev.filter(college => college.id !== id))
+  const deleteLink = (id:number) => {
+    setLinkList((prev) => prev.filter(link => link.id !== id))
   }
 
 
@@ -57,23 +59,23 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
 
   useEffect(() => {
     collegeValidator();
-  }, [isValuesPageTwo]);
+  }, [isValuesPageThree]);
 
   return (
     <div className="newProdPageContainer">
-
-      <div className="newProgPageHead">Új Product Létrehozása 2</div>
+        
+      <div className="newProgPageHead">Új Product Létrehozása 3</div>
       <div className="newProgPageBody newProdPage2">
         <div className="page2BodyWrapper">
           <div className="inputWrapper">
             <div className="collegeNameInputDiv inputDiv">
               <label htmlFor="name">Name</label>
               <input
-                value={isValuesPageTwo.name}
+                value={isValuesPageThree.name}
                 name="name"
                 type="text"
                 onChange={(e) => {
-                  setValuesPageTwo((prev) => ({
+                  setValuesPageThree((prev) => ({
                     ...prev,
                     name: e.target.value,
                   }));
@@ -83,27 +85,27 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
             </div>
 
             <div className="collegePosInputDiv inputDiv">
-              <label htmlFor="name">Position</label>
+              <label htmlFor="name">Link</label>
               <input
-                value={isValuesPageTwo.position}
+                value={isValuesPageThree.link}
                 name="name"
                 type="text"
                 onChange={(e) => {
-                  setValuesPageTwo((prev) => ({
+                  setValuesPageThree((prev) => ({
                     ...prev,
-                    position: e.target.value,
+                    link: e.target.value,
                   }));
                 }}
               />
-              <div className="inputErrorDiv">{isErrorMessage.position}</div>
+              <div className="inputErrorDiv">{isErrorMessage.link}</div>
               <button
                 disabled={
                   isErrorMessage.name.length !== 0 ||
-                  isErrorMessage.position.length !== 0
+                  isErrorMessage.link.length !== 0
                 }
                 onClick={() => addToArray()}
               >
-                Add College
+                Add Link
               </button>
             </div>
           </div>
@@ -111,14 +113,14 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
           <div className="collegeWrapper">
             <div className="collegeListhead">College List</div>
             <div className="colllegeList">
-              {isCollegeList.map((college, iterator) => (
+              {isLinkList.map((link, iterator) => (
                 <div key={`collegeCard${iterator}`} className="collegeCard">
                     <div className="collegeCardata">
 
-                  <div>{college.name}</div>
-                  <div>{college.position}</div>
+                  <div>{link.name}</div>
+                  <div>{link.link}</div>
                     </div>
-                    <div className="delete" onClick={()=>deleteCollege(college.id)}>
+                    <div className="delete" onClick={()=>deleteLink(link.id)}>
                         delete
                     </div>
                 </div>
@@ -129,8 +131,8 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
       </div>
 
       <div className="newProdPageFooter">
-        <button onClick={() => props.pageSetter(1)}>Prev</button>
-        <button onClick={() => props.pageSetter(3)} disabled={isCollegeList.length===0} >next</button>
+        <button onClick={() => props.pageSetter(2)}>Prev</button>
+        <button onClick={() => props.pageSetter(3)}>next</button>
       </div>
     </div>
   );
