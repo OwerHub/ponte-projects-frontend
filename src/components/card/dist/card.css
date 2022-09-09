@@ -11,6 +11,22 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
+  overflow: hidden;
+}
+.cardOuter div {
+  max-width: 80%;
+}
+
+.buttonDiv {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0 0;
+}
+.buttonDiv button {
+  width: 3rem;
+  padding: 0.4rem;
+  display: flex;
+  justify-content: center;
 }
 
 img {

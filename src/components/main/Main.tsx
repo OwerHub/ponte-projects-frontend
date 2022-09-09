@@ -6,10 +6,12 @@ import { fakebackendAnswer,  fakebackendAdd, fakebackendDelete } from "../../ser
 
 import { CardContainer } from "../cardContainer/cardContainer";
 import { NewProduct } from "../newProduct/NewProduct";
+import { ResultModal } from "../resultModal/Resultmodal";
 
 export const Main = () => {
   const [isProjectArray, setProjectArray] = useState<Iproject[]>([]);
   const [isNewModalOpen, setNewModalOpen] = useState<boolean>(false);
+  const [isResultModalOpen, setResultModalOpen] = useState<boolean>(true) 
 
   async function askProject() {
     const solved = await fakebackendAnswer(1500);
@@ -29,6 +31,11 @@ export const Main = () => {
     setProjectArray(solved as Iproject[])
     }
 
+
+    const showresult = (id:number) => {
+
+    }
+
   useEffect(() => {
     askProject();
   }, []);
@@ -43,7 +50,11 @@ export const Main = () => {
 
       <div className="cardDiv">
         {isProjectArray.length > 0 && (
-          <CardContainer projects={isProjectArray} deleteCard={(id) =>deleteProject(id)} />
+          <CardContainer 
+            projects={isProjectArray} 
+            deleteCard={(id) =>deleteProject(id)} 
+            resultCard={(id) => showresult(id)}
+            />
         )}
       </div>
 
@@ -56,7 +67,13 @@ export const Main = () => {
             }}
           />
         )}
+
+        {isResultModalOpen && (
+          <ResultModal id={4243}/>
+        )}
       </div>
+
+    
 
     </div>
   );
