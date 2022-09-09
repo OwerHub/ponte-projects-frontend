@@ -18,6 +18,5 @@ export const descriptionValidator = (description: string): string => {
 };
 
 export const characterValidator = (name: string, minimum: number): string => {
-    console.log("validálok")
     return name.length >= minimum ? "" : `Please type minimum ${minimum}  character`;
   };

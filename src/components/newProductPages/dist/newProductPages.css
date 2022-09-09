@@ -57,8 +57,30 @@
 }
 .newProdPage2 .page2BodyWrapper .inputWrapper {
   /*  display: flex;
-   flex-direction: column;
-   justify-content: center; */
+  flex-direction: column;
+  justify-content: center; */
   padding: 5vh 0 0;
   width: 50%;
+}
+.newProdPage2 .page2BodyWrapper .collegeWrapper {
+  width: 50%;
+}
+.newProdPage2 .page2BodyWrapper .collegeWrapper .collegeListhead {
+  text-align: center;
+}
+.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList {
+  overflow-y: auto;
+  height: 65vh;
+}
+.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard {
+  margin: 1rem 0.8rem;
+  padding: 0.3rem 0.8rem 0.5rem;
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard div:first-child {
+  font-weight: bold;
+}
+.newProdPage2 .page2BodyWrapper .collegeWrapper .colllegeList .collegeCard div:nth-child(2) {
+  margin: 0 0 0 1rem;
 }

@@ -1,10 +1,6 @@
 import "./dist/newProductPages.css";
 import { useState, useEffect } from "react";
-import {
-  nameValidator,
-  descriptionValidator,
-  characterValidator,
-} from "../../services/validators";
+import { characterValidator } from "../../services/validators";
 import { Icollege } from "../../types/projectTypes";
 
 interface IproductPageProps {
@@ -12,16 +8,14 @@ interface IproductPageProps {
 }
 
 interface InputCollege {
- name: string
- position: string
+  name: string;
+  position: string;
 }
 interface IerrorMessagePage2 extends InputCollege {
   next: string;
 }
 
-
 export const NewProductPageTwo = (props: IproductPageProps) => {
-
   const [isErrorMessage, setErrorMessage] = useState<IerrorMessagePage2>({
     name: "",
     position: "",
@@ -35,7 +29,6 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
 
   const [isCollegeList, setCollegeList] = useState<Icollege[]>([]);
 
-
   const collegeValidator = () => {
     setErrorMessage((prev) => ({
       ...prev,
@@ -44,19 +37,22 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
     }));
   };
 
-  
   const addToArray = () => {
-    const newCollege:Icollege = {
-        ...isValuesPageTwo,
-        id: 3242323
-    }
+    const newCollege: Icollege = {
+      ...isValuesPageTwo,
+      id: Date.now(),
+    };
 
-  }
+    setCollegeList((prev) => [...prev, newCollege]);
 
+    setValuesPageTwo({ name: "", position: "" });
+  };
 
-  useEffect(()=> {
-    collegeValidator()
-  }, [isValuesPageTwo])
+  console.log(isCollegeList);
+
+  useEffect(() => {
+    collegeValidator();
+  }, [isValuesPageTwo]);
 
   return (
     <div className="newProdPageContainer">
@@ -67,6 +63,7 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
             <div className="collegeNameInputDiv inputDiv">
               <label htmlFor="name">Name</label>
               <input
+                value={isValuesPageTwo.name}
                 name="name"
                 type="text"
                 onChange={(e) => {
@@ -76,12 +73,13 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
                   }));
                 }}
               />
-              <div className="inputErrorDiv">{ isErrorMessage.name }</div>
+              <div className="inputErrorDiv">{isErrorMessage.name}</div>
             </div>
 
             <div className="collegePosInputDiv inputDiv">
               <label htmlFor="name">Position</label>
               <input
+                value={isValuesPageTwo.position}
                 name="name"
                 type="text"
                 onChange={(e) => {
@@ -93,31 +91,37 @@ export const NewProductPageTwo = (props: IproductPageProps) => {
               />
               <div className="inputErrorDiv">{isErrorMessage.position}</div>
               <button
-                  disabled={
-                    isErrorMessage.name.length !== 0 ||
-                    isErrorMessage.position.length !== 0
-                  } 
-
-              >Add College</button>
+                disabled={
+                  isErrorMessage.name.length !== 0 ||
+                  isErrorMessage.position.length !== 0
+                }
+                onClick={() => addToArray()}
+              >
+                Add College
+              </button>
             </div>
           </div>
 
-          <div className="showWrapper">kettes</div>
+
+
+          <div className="collegeWrapper">
+            <div className="collegeListhead">College List</div>
+            <div className="colllegeList">
+              {isCollegeList.map((college, iterator) => (
+                <div key={`collegeCard${iterator}`} className="collegeCard">
+                  <div>{college.name}</div>
+                  <div>{college.position}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="newProdPageFooter">
         <button onClick={() => props.pageSetter(1)}>Prev</button>
-        <button
-        
-          onClick={() => props.pageSetter(4)}
-        >
-          next
-        </button>
+        <button onClick={() => props.pageSetter(4)}>next</button>
       </div>
     </div>
   );
 };
-function setValuesPageTwo(arg0: (prev: any) => any) {
-  throw new Error("Function not implemented.");
-}

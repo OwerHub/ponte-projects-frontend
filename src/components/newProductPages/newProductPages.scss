@@ -64,19 +64,43 @@
     .page2BodyWrapper {
         display: flex;
         height: 65vh;
+
         .inputWrapper {
-            //background-color: red;
-           /*  display: flex;
+            /*  display: flex;
             flex-direction: column;
             justify-content: center; */
             padding: 5vh 0 0 ;
             width: 50%;
             .inputDiv{
-        @extend .inputDivStandard;
-        input{
-            @extend .inputsStandard;
+                @extend .inputDivStandard;
+                input{
+                    @extend .inputsStandard;
+                }
+            }
         }
-      }
-    }
+        
+        .collegeWrapper{
+        width: 50%;
+        .collegeListhead{
+            text-align: center;
+        }
+        .colllegeList{
+            overflow-y: auto;
+            height: 65vh;
+            .collegeCard{
+                margin: 1rem .8rem;
+                padding: .3rem .8rem .5rem;
+                border-radius: 5px;
+                background-color: whitesmoke;
+                div:first-child{
+                    font-weight: bold;
+                };
+                div:nth-child(2){
+                    margin: 0 0 0 1rem;
+                }
+            }
+        }
+    }    
+
   }
 }
